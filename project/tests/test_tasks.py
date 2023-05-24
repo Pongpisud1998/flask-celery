@@ -1,14 +1,6 @@
-<<<<<<< Updated upstream
-import json
-from unittest.mock import patch, call
-
-from project.server.tasks import create_task
-
-=======
 from project.server.tasks import create_task
 from unittest.mock import patch, call
 import json
->>>>>>> Stashed changes
 
 def test_home(test_app):
     client = test_app.test_client()
@@ -21,10 +13,6 @@ def test_task():
     assert create_task.run(2)
     assert create_task.run(3)
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 @patch("project.server.tasks.create_task.run")
 def test_mock_task(mock_run):
     assert create_task.run(1)
@@ -57,9 +45,4 @@ def test_task_status(test_app):
 
     while content["task_status"] == "PENDING":
         resp = client.get(f"tasks/{task_id}")
-<<<<<<< Updated upstream
         content = json.loads(resp.data.decode())
-    assert content == {"task_id": task_id, "task_status": "SUCCESS", "task_result": True}
-=======
-        content = json.loads(resp.data.decode())
->>>>>>> Stashed changes
