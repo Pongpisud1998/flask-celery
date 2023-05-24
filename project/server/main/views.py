@@ -2,10 +2,15 @@
 
 from celery.result import AsyncResult
 from flask import render_template, Blueprint, jsonify, request
+<<<<<<< Updated upstream
 
 from project.server.tasks import create_task
 
 
+=======
+from project.server.tasks import create_task
+from celery.result import AsyncResult
+>>>>>>> Stashed changes
 main_blueprint = Blueprint("main", __name__,)
 
 
